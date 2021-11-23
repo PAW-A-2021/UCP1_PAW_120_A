@@ -1,0 +1,53 @@
+﻿@model IEnumerable<UCP1_PAW_025_A.Models.Barangg>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NamaBarang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Harga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JenisBarang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UkuranBarang)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaBarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Harga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JenisBarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UkuranBarang)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdBarang">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdBarang">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdBarang">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
